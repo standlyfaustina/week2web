@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Enhanced HTML5 Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background: #f9f9f9;
+            color: #333;
+        }
+
+        header, main, footer {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 8px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            text-align: center;
+            color: #005f99;
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        form {
+            display: grid;
+            gap: 15px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input, select, textarea, button {
+            padding: 8px;
+            font-size: 1rem;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #005f99;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #004466;
+        }
+
+        figure {
+            margin: 0;
+            margin-top: 10px;
+            max-width: 100%;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        figcaption {
+            font-size: 0.9rem;
+            text-align: center;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        nav ul {
+            list-style: disc inside;
+            margin-left: 20px;
+        }
+
+        .readonly-input {
+            background-color: #eee;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Enhanced HTML5 Form Submission</h1>
+        <nav aria-label="Introduction highlights">
+            <ul>
+                <li>Explore a form combining various HTML5 features</li>
+                <li>Includes lists, tables, and media</li>
+                <li>Demonstrates validation, accessibility, and semantic structuring</li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>User Information Overview</h2>
+            <p>This section includes a summary table showcasing the primary fields users will complete in the form.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Field</th>
+                        <th>Description</th>
+                        <th>Requirement</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Full Name</td>
+                        <td>Your full legal name</td>
+                        <td>Required</td>
+                    </tr>
+                    <tr>
+                        <td>Email Address</td>
+                        <td>A valid email for contact</td>
+                        <td>Required</td>
+                    </tr>
+                    <tr>
+                        <td>Phone Number</td>
+                        <td>Contact phone (optional)</td>
+                        <td>Optional</td>
+                    </tr>
+                    <tr>
+                        <td>Birthdate</td>
+                        <td>Your date of birth</td>
+                        <td>Required</td>
+                    </tr>
+                    <tr>
+                        <td>Gender</td>
+                        <td>Select gender identity</td>
+                        <td>Required</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>Informative Media</h2>
+            <p>Below is a relevant image with caption and a short video on HTML5 forms.</p>
+            <figure>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/HTML5_logo_and_wordmark.svg" alt="HTML5 logo" width="300" height="150" />
+                <figcaption>HTML5 logo representing modern web standards.</figcaption>
+            </figure>
+            
+            <figure>
+                <video width="320" height="180" controls>
+                    <source src="https://interactive-examples.mdn.mozilla.net/media/examples/html5-video.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+                <figcaption>Example video demonstrating HTML5 video playback.</figcaption>
+            </figure>
+        </section>
+
+        <section>
+            <h2>Complete HTML5 Form</h2>
+            <form action="#" method="POST" novalidate>
+                <div>
+                    <label for="fullname">Full Name<span aria-hidden="true">*</span></label>
+                    <input type="text" id="fullname" name="fullname" placeholder="Paul Enanga" required autocomplete="name" />
+                </div>
+
+                <div>
+                    <label for="email">Email Address<span aria-hidden="true">*</span></label>
+                    <input type="email" id="email" name="email" placeholder="jane@example.com" required autocomplete="email" />
+                </div>
+
+                <div>
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+1-555-123-4567" pattern="^\+?\d{1,4}[-.\s]?\(?\d{1,5}\)?[-.\s]?\d{1,5}[-.\s]?\d{1,9}$" autocomplete="tel" />
+                </div>
+
+                <div>
+                    <label for="birthdate">Birthdate<span aria-hidden="true">*</span></label>
+                    <input type="date" id="birthdate" name="birthdate" required max="2008-12-31" />
+                </div>
+
+                <fieldset>
+                    <legend>Gender<span aria-hidden="true">*</span></legend>
+                    <div>
+                        <input type="radio" id="gender-female" name="gender" value="female" required />
+                        <label for="gender-female">Female</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="gender-male" name="gender" value="male" />
+                        <label for="gender-male">Male</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="gender-other" name="gender" value="other" />
+                        <label for="gender-other">Other</label>
+                    </div>
+                </fieldset>
+
+                <div>
+                    <label for="country">Country<span aria-hidden="true">*</span></label>
+                    <select id="country" name="country" required autocomplete="country-name">
+                        <option value="">Select your country</option>
+                        <option value="usa">United States</option>
+                        <option value="canada">Nigeria</option>
+                        <option value="cmr">Cameroon</option>
+                        <option value="australia">Australia</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="bio">Short Biography</label>
+                    <textarea id="bio" name="bio" placeholder="Tell us about yourself..." rows="4" maxlength="500" autocomplete="off"></textarea>
+                </div>
+
+                <div>
+                    <label for="referral-code">Referral Code (readonly)</label>
+                    <input type="text" id="referral-code" name="referral" value="REF12345" readonly class="readonly-input" />
+                </div>
+
+                <div>
+                    <label for="newsletter">Subscribe to newsletter</label>
+                    <input type="checkbox" id="newsletter" name="newsletter" />
+                </div>
+
+                <div>
+                    <label for="file-upload">Upload Profile Picture (optional)</label>
+                    <input type="file" id="file-upload" name="profilepic" accept="image/*" />
+                </div>
+
+                <div>
+                    <label for="password">Password<span aria-hidden="true">*</span></label>
+                    <input 
+                        type="password" 
+                        id="password" 
+                        name="password" 
+                        placeholder="Create a secure password" 
+                        required 
+                        minlength="8" 
+                        autocomplete="new-password" 
+                        pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" 
+                        title="Must contain at least 8 characters, including letters and numbers." />
+                </div>
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Enhanced Form Demo. Designed for accessibility and modern web standards.</p>
+    </footer>
+</body>
+</html>
